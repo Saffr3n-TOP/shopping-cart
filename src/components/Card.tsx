@@ -3,25 +3,30 @@ import type {
   CardProps,
   CardControlsProps,
   CardWrapperProps,
-  QuantitySetterProps
+  QuantitySetterProps,
+  CartItem
 } from '../types';
 import '../styles/card.sass';
 
-export default function Card({ item, setCart }: CardProps) {
+export default function Card({ item, setCart, cart }: CardProps) {
   const [quantity, setQuantity] = useState(0);
 
   return (
     <div className="card">
       <h2 className="card__heading">{item.title}</h2>
       <img src={item.image} alt="" className="card__image" />
-      <span className="card__price">{'$' + item.price}</span>
+      <span className="card__price">
+        {'$' + item.price + (cart ? ' x ' + (item as CartItem).quantity : '')}
+      </span>
 
-      <CardControls
-        item={item}
-        setCart={setCart}
-        quantity={quantity}
-        setQuantity={setQuantity}
-      />
+      {!cart && (
+        <CardControls
+          item={item}
+          setCart={setCart}
+          quantity={quantity}
+          setQuantity={setQuantity}
+        />
+      )}
     </div>
   );
 }
