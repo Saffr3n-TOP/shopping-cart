@@ -1,11 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
+import type { LinkProps } from '../types';
 import '../styles/link.sass';
-
-type LinkProps = {
-  children: React.ReactNode;
-  to: string;
-  nav?: boolean;
-};
 
 export default function Link({ children, to, nav }: LinkProps) {
   return (
