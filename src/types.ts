@@ -14,8 +14,9 @@ export type LinkProps = {
 };
 
 export type CardProps = {
-  item: Item;
+  item: Item | CartItem;
   setCart: React.Dispatch<React.SetStateAction<Cart>>;
+  cart?: boolean;
 };
 
 export type CardWrapperProps = {
