@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from './Link';
-import { HeaderProps } from '../types';
+import type { HeaderProps } from '../types';
 import '../styles/nav.sass';
 
 export default function Nav({ cart }: HeaderProps) {
@@ -19,7 +19,7 @@ export default function Nav({ cart }: HeaderProps) {
     <nav className="nav">
       <ul className="nav__menu">
         <li className="nav__item">
-          <Link to="/" nav>
+          <Link to="" nav>
             Home
           </Link>
         </li>

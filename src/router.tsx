@@ -6,11 +6,11 @@ import Cart from './components/Cart';
 
 export const routes = [
   {
-    path: '/',
+    path: 'shopping-cart',
     element: <App />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />
       },
       {
